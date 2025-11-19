@@ -40,8 +40,8 @@ print(f'Готово!\n'
 print("Введите предпологаемое число: ", end="")
 number = input()
 while not is_valid(number):
-    number = input()
     print("Введите предпологаемое число: ", end="")
+    number = input()
 number = int(number)
 total = 1
 
@@ -49,8 +49,8 @@ while number != mysterious_number :
     print(['Ваше число меньше загаданного, попробуйте еще разок', 'Ваше число больше загаданного, попробуйте еще разок'] [number < mysterious_number])
     number = input()
     while not is_valid(number):
-        number = input()
         print("Введите предпологаемое число: ", end="")
+        number = input()
     number = int(number)
     total += 1
 
