@@ -16,10 +16,6 @@ while True:
     chose = input()
     if f.yes_no(chose):
         break
-    elif f.yes_no(chose) == 0:
-        quit('Хорошо, если передумаете напиши /start')
-    else:
-        print("-" * 27,'Введите корректные значения', "-" * 27, sep='\n')
 
 #Ввод данных
 print('Введите значение x = ', end="")
