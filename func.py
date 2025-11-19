@@ -12,5 +12,7 @@ def yes_no(n):
 def random(first,last):
     return randint(first,last)
 
-def is_valid():
-    pass
+def is_valid(digit):
+    if digit.isdigit():
+        return True
+    return print("-" * 27,'Введите корректные значения', "-" * 27, sep='\n')

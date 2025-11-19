@@ -1,5 +1,7 @@
-import func as f
 import time
+
+import func as f
+from func import is_valid
 
 # Приветсвие
 print("-" * 32,"Добро пожаловать в 'Угадайку'", "-" * 32, sep='\n')
@@ -9,7 +11,7 @@ print(f"Правила:"'\n'
       "1.Программа загадывает число в диапозоне от x(включительно) до y(включительно)"'\n'
       "2.Необходимо угадать это число"'\n'
       "3.Диапазоны x и y вы выбираете сами."'\n'
-      "4.При неправильном ответа программа подскажет 'больше' или 'меньше' ")
+      "4.При неправильном ответе программа подскажет 'больше' или 'меньше' ")
 
 while True:
     print(f'Хотите начать? {'\n'}Y-Да/N-Нет')
@@ -19,21 +21,32 @@ while True:
 
 #Ввод данных
 print('Введите значение x = ', end="")
-x = int(input())
+x = input()
+while not is_valid(x):
+    print('Введите значение x = ', end="")
+    x = input()
 print('Введите значение y = ', end="")
-y = int(input())
+y = input()
+while not is_valid(y):
+    print('Введите значение y = ', end="")
+    y = input()
 
 #Основная логика игры
 print(f'Загадываю число от {x} до {y}...')
-mysterious_number = f.random(x,y)
+mysterious_number = f.random(int(x),int(y))
 print(f'Готово!\n'
-      f'Пора угадывать число')
+      f'Пора угадывать!\n')
 
-number = int(input())
+print("Введите предпологаемое число: ", end="")
+number = input()
+
 total = 1
-while number != mysterious_number:
-    print(["Меньше", "Больше"] [number < mysterious_number])
-    number = int(input())
+
+while int(number) != mysterious_number :
+    while not is_valid(number):
+        number = input()
+    print(['Ваше число меньше загаданного, попробуйте еще разок', 'Ваше число больше загаданного, попробуйте еще разок'] [int(number) < mysterious_number])
+    number = input()
     total += 1
 
 delay = 10
