@@ -1,3 +1,5 @@
+from random import *
+
 # Основные функции
 def yes_no(n):
     if n.lower() == "y":
@@ -6,3 +8,6 @@ def yes_no(n):
         return False
     else:
         return None
+
+def random(first,last):
+    return randint(first,last)
