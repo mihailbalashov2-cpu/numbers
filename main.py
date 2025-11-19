@@ -35,7 +35,7 @@ print(f'Готово!\n'
 number = int(input())
 total = 0
 while number != mysterious_number:
-    print(["Меньше", "Больше"] [number > mysterious_number])
+    print(["Меньше", "Больше"] [number < mysterious_number])
     number = int(input())
     total += 1
 print(f'Поздравляю!!!Вы угадали число!На это вам понадобилось {total} попыток')
