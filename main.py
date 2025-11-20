@@ -25,11 +25,18 @@ x = input()
 while not is_valid(x):
     print('Введите значение x = ', end="")
     x = input()
-print('Введите значение y = ', end="")
-y = input()
-while not is_valid(y):
+x = int(x)
+while True:
     print('Введите значение y = ', end="")
     y = input()
+    while not is_valid(y):
+        print('Введите значение y = ', end="")
+        y = input()
+    y = int(y)
+    if x < y:
+        break
+    else:
+        print("Значения х не может быть больше значения y")
 
 #Основная логика игры
 print(f'Загадываю число от {x} до {y}...')
