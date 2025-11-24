@@ -12,9 +12,8 @@ def play():
         # Основная логика игры
         logic_game(x, y)
 
-
 def start_game():
-    print("Правила:"'\n'
+    rules = ("Правила:"'\n'
           "1.Программа загадывает число в диапозоне от x(включительно) до y(включительно)"'\n'
           "2.Необходимо угадать это число"'\n'
           "3.Диапазоны x и y вы выбираете сами."'\n'
@@ -45,7 +44,6 @@ def input_user():
         else:
             print("Значения х не может быть больше значения y")
     return x,y
-
 
 def logic_game(x,y):
         print(f'Загадываю число от {x} до {y}...')
@@ -82,7 +80,6 @@ def yes_no(n):
         return quit('Всего доброго!')
     return print("-" * 27,'Введите корректные значения', "-" * 27, sep='\n')
 
-
 def random(first,last):
     return randint(first,last)
 
@@ -90,3 +87,8 @@ def is_valid(digit):
     if digit.isdigit():
         return True
     return print("-" * 27,'Введите корректные значения', "-" * 27, sep='\n')
+
+#Функции GUI
+def button_click():
+    start_game()
+    result_text.set(start_game())
